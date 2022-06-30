@@ -9,6 +9,8 @@ const errorHandler = require("./middlewares/error_handler");
 const routes = require("./routes");
 
 dotenv.config();
+dotenv.config({ path: './config/config.env' });
+
 database.connect();
 
 const PORT = process.env.PORT || 8080;
