@@ -2,15 +2,14 @@ const Logger = require("../helpers/logger");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-dotenv.config()
-dotenv.config({ path: './config/config.env' });
+dotenv.config();
 
 const connect = async () => {
   try {
     await mongoose.connect(process.env.DATABASE_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
+
     });
     Logger.info("connect db successfully!");
   } catch (error) {
